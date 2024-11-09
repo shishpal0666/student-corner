@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block maincontent %}
+
+
+<main class="bd-content order-1 py-5 " id="content">
+    <div class="container">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.firstname.label() }}
+                {{ form.firstname(class="form-control", placeholder="First Name") }}
+            </div>
+            <div class="mb-3">
+                {{ form.lastname.label() }}
+                {{ form.lastname(class="form-control", placeholder="Last Name") }}
+            </div>
+
+        </form>
+    </div>
+</main>
+
+
+{% endblock %}

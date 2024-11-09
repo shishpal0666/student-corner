@@ -1,7 +1,7 @@
 from flask import render_template, Blueprint, url_for, redirect, flash
 from flask_login import login_user, logout_user, login_required, current_user
 from app.models import user_creation, load_user_by_credentials
-from app.forms import RegisterForm, LoginForm
+from app.forms import RegisterForm, LoginForm,ProfileForm
 import bcrypt
 
 main = Blueprint('main', __name__)
@@ -35,3 +35,11 @@ def logout():
     logout_user()
     flash("You have been logged out!", category='info')
     return redirect(url_for('main.home'))
+
+
+@main.route("/profile")
+@login_required
+def profile():
+    form=ProfileForm()
+
+    return render_template("profile.html",title='Profile',form=form)

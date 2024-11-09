@@ -6,6 +6,16 @@ from app.db import get_db_connection
 import re
 import email_validator
 
+
+class ProfileForm(FlaskForm):
+    firstname=StringField('Firstname', validators=[DataRequired(), Length(min=2, max=30)])
+    lastname=StringField('Lastname',validators=[DataRequired(),Length(min=1,max=30)])
+    
+
+
+
+
+
 class StrongPassword:
     def __init__(self, message=None):
         if not message:

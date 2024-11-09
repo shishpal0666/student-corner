@@ -3,6 +3,10 @@
     padding-right: 10px;
 }
 
+main{
+    padding: 0.5rem;
+}
+
 .login{
     margin-right: 10px;
     margin-bottom: 10px;
